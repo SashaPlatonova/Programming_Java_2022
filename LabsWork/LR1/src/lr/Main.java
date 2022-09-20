@@ -1,7 +1,5 @@
 package lr;
 
-import java.util.Arrays;
-
 /**
  * Лабораторная работа №1
  * @author Platonova Alexandra
