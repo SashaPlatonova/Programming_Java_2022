@@ -6,6 +6,7 @@ import persons.Shorties;
 import stuff.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -19,7 +20,7 @@ public class Main {
 
         for (int i = 0; i < 5; i++) {
             Actions a = Actions.values()[(int) (Math.random()*Actions.values().length)];
-            shorties.add(new Child(Type.PROTAGONIST, "Child-" + i, a));
+            shorties.add(new Child(Type.PROTAGONIST, "Child-" + i, new ArrayList<>(List.of(a))));
         }
         shorties.add(doctor);
         shorties.add(artist);
@@ -29,7 +30,7 @@ public class Main {
         moon.setShorties(shorties);
         for (Shorties shorty : moon.getShorties()) {
             if (shorty instanceof Awakable) {
-                ((Awakable) shorty).doSmth(shorty.getAct());
+                ((Awakable) shorty).doSmth(shorty.getAct().get((int) (Math.random()*shorty.getAct().size())));
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {

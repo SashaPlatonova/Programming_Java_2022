@@ -6,6 +6,7 @@ import stuff.Level;
 import stuff.SleepType;
 import stuff.Type;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Doctor extends Shorties implements Snoreble {
@@ -15,7 +16,7 @@ public class Doctor extends Shorties implements Snoreble {
     private int awakeCounter;
 
     public Doctor(String name) {
-        super(Type.PROTAGONIST, name, null);
+        super(Type.PROTAGONIST, name, new ArrayList<>());
         this.isAwake = true;
     }
 
@@ -35,7 +36,7 @@ public class Doctor extends Shorties implements Snoreble {
                     e.printStackTrace();
                 }
             }
-            System.out.println(getName() + " awake " + getAwakeCounter() + " times");
+            System.out.println(getName() + " was awake " + getAwakeCounter() + " times");
         };
 
         Runnable sleep = () -> {
@@ -111,7 +112,7 @@ public class Doctor extends Shorties implements Snoreble {
                 ", awakeCounter=" + awakeCounter +
                 ", type=" + type +
                 ", name='" + name + '\'' +
-                ", act=" + act +
+                ", acts=" + acts +
                 '}';
     }
 }
