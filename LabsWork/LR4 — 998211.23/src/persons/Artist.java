@@ -26,5 +26,4 @@ public class Artist extends Shorties implements Awakable {
                 '}';
     }
 
-
 }

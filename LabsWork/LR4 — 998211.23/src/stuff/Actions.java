@@ -6,5 +6,6 @@ public enum Actions {
     EAT,
     BUILD,
     OBSERVE,
-    DRAW
+    DRAW,
+    PLAY_MUSIC
 }

@@ -1,6 +1,7 @@
 package persons;
 
 import stuff.Actions;
+import stuff.Mineral;
 import stuff.ShortiesType;
 
 import java.util.ArrayList;
@@ -10,11 +11,22 @@ public abstract class Shorties {
     protected ShortiesType type;
     protected String name;
     protected ArrayList<Actions> acts;
+    protected boolean isFlying;
+    protected Mineral mineral;
 
     public Shorties(ShortiesType type, String name, ArrayList<Actions> acts) {
         this.type = type;
         this.name = name;
         this.acts = acts;
+        this.isFlying = false;
+    }
+
+    public Shorties(ShortiesType type, String name, ArrayList<Actions> acts, boolean isFlying, Mineral mineral) {
+        this.type = type;
+        this.name = name;
+        this.acts = acts;
+        this.isFlying = isFlying;
+        this.mineral = mineral;
     }
 
     public String getName() {
@@ -29,6 +41,21 @@ public abstract class Shorties {
         this.acts.add(act);
     }
 
+    public boolean isFlying() {
+        return isFlying;
+    }
+
+    public void setFlying(boolean flying) {
+        this.isFlying = flying;
+    }
+
+    public Mineral getMineral() {
+        return mineral;
+    }
+
+    public void setMineral(Mineral mineral) {
+        this.mineral = mineral;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -51,4 +78,5 @@ public abstract class Shorties {
                 ", acts: " + acts +
                 '}';
     }
+
 }
